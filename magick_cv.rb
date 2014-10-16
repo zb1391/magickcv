@@ -4,7 +4,7 @@ require 'open-uri'
 include OpenCV
 
 module MagickCv
-  def mat_from_url(image_to_read)
+  def magickcv_read(image_to_read)
     # Read Image with RMagick from a URL or FILE
     image = nil
 
@@ -25,8 +25,8 @@ module MagickCv
     CvMat.new(size.height, size.width,:cv16u).set_data(pixels)
   end
 
-  def display_image(cvMat)
-    window = GUI::Window.new('Display window') # Create a window for display.
+  def display_image(cvMat,name)
+    window = GUI::Window.new(name) # Create a window for display.
     window.show(cvMat) # Show our image inside it.
     GUI::wait_key # Wait for a keystroke in the window.
   end
