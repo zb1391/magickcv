@@ -1,7 +1,7 @@
 require './magick_cv'
 include MagickCv
 
-if ARGV.size == 0
+if ARGV.size == 0   
   puts "Usage: ruby #{__FILE__} url_of_image"
   exit
 end
@@ -19,6 +19,7 @@ kernel = IplConvKernel.new(7,            # width
 dilated = cvMat.dilate(kernel,1)
 dilated2 = cvMat.dilate(nil,3)
 eroded = cvMat.erode
+opened = cvMat.morphology(CV_MOP_OPEN)
+opened_kernel = cvMat.morphology(CV_MOP_OPEN,kernel)
 
-# display_image(cvMat,'mat1')
 # display_image(cvMat2,'mat2')
