@@ -21,5 +21,8 @@ dilated2 = cvMat.dilate(nil,3)
 eroded = cvMat.erode
 opened = cvMat.morphology(CV_MOP_OPEN)
 opened_kernel = cvMat.morphology(CV_MOP_OPEN,kernel)
-
+smaller_size = CvSize.new(20,20)
+smaller = cvMat.resize(smaller_size)
+display_image(cvMat,'big')
+display_image(smaller,'small')
 # display_image(cvMat2,'mat2')

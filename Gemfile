@@ -8,3 +8,5 @@ gem 'ruby-opencv' # need to install opencv on your machine to the default instal
 gem 'pry'
 
 gem 'rspec'
+gem 'google_custom_search_api'
+gem 'dotenv-rails'

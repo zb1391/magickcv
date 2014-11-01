@@ -152,4 +152,14 @@ describe "Simple Image Processing" do
       # dest = cvMat.flood_fill(seed_point,color,nil,nil)
     end
   end
+
+  it "should resize the image" do
+    smaller = CvSize.new(cvMat.rows/2,cvMat.cols/2)
+    dest = cvMat.resize(smaller)
+    # Interpolation: how to handle overlapping pixels (defaults to linear)
+    # CV_INTER_IN     - Nearest Neighbor
+    # CV_INTER_LINEAR - linearly weight 2x2 surrounding pixels
+    # CV_INTER_AREA   - virtually place resize pixel over old pixels and take average
+    # CV_INTER_CUBIC  - too confusing right now
+  end
 end
